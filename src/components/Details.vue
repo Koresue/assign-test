@@ -41,13 +41,18 @@
         // conponents: {
         //     Briefing
         // },
-        created(){
+        created() {
+
+            let getid = this.$route.query.q;
+            console.log(getid)
+
             fetch('http://ec2-18-177-93-10.ap-northeast-1.compute.amazonaws.com/assignDB/all_post.php')
                 .then(function (response) {
                     return response.text()
                 })
                 .then(function (data) {
-                    let i = 2;
+
+                    let i = getid;
                     console.log(JSON.stringify(data))
                     let obj = JSON.parse(data)
                     let rdata = obj['data']
@@ -61,29 +66,24 @@
                     document.getElementById("Deadline").textContent = rdata[i]['briefing_deadline'];
                     document.getElementById("Worklocation").textContent = rdata[i]['workplace'];
                     document.getElementById("Target").textContent = rdata[i]['target'];
-                    if(rdata[i]['international_flg'] === "0"){
+                    if (rdata[i]['international_flg'] === "0") {
                         document.getElementById("International").textContent = "不可"
-                    }else if(rdata[i]['international_flg'] === "1"){
+                    } else if (rdata[i]['international_flg'] === "1") {
                         document.getElementById("International").textContent = "可"
-                    }else {
+                    } else {
                         document.getElementById("International").textContent = "不明"
                     }
 
-                    if(rdata[i]['disability_flg'] === "0"){
+                    if (rdata[i]['disability_flg'] === "0") {
                         document.getElementById("Disability").textContent = "不可"
-                    }else if(rdata[i]['disability_flg'] === "1"){
+                    } else if (rdata[i]['disability_flg'] === "1") {
                         document.getElementById("Disability").textContent = "可"
-                    }else {
+                    } else {
                         document.getElementById("Disability").textContent = "不明"
                     }
                     document.getElementById("Information").textContent = rdata[0]['supplementary'];
 
                 })
-        },
-        methods:{
-            Bridetails: function () {
-
-            }
 
         }
     }
@@ -91,24 +91,28 @@
 
 <style scoped>
     /* スマホサイズにカスタマイズ */
-    div.box{
+    div.box {
         width: 276px;
         height: 597px;
     }
+
     /*詳細本文*/
-    div p{
+    div p {
         font-size: 10px;
     }
+
     /*googlemap*/
-    #maplink{
+    #maplink {
         font-size: 10px;
     }
-    div#details{
+
+    div#details {
         padding: 0px;
         border: 1px solid #333333;
         border-radius: 10px;
     }
-    p#title{
+
+    p#title {
         text-align: center;
         font-size: 20px
     }

@@ -10,9 +10,16 @@
                         <!--<router-link to="Details" v-on:click="Bridetails">詳細{{item.dataid}}</router-link>-->
                         <!--&lt;!&ndash;"{parms:{ name:'Details',value:'{{item.dataid}}'}}"&ndash;&gt;-->
                     <!--</form>-->
-                <router-link to="Details" v-on:click="Bridataid">詳細</router-link>
+                <!--<form action="Details.vue" method="post">-->
+                    <!--<input type="hidden" v-model="item.dataid">-->
+                    <!--<input type="submit" value="詳細">-->
+                <!--</form>-->
+                <!--<input type="hidden" v-model="item.dataid">-->
+                <!--<router-link to="Details">詳細</router-link>-->
+                    <!--v-on="Bridataid(item.id)"-->
+                    <!--<router-link to="Details" v-on:click="Bridataid(item.dataid)">詳細</router-link>-->
+                    <router-link v-bind:to="{path:'Details',query:{q:item.id}}">詳細</router-link>
                 </td>
-
             </tr>
             </tbody>
         </table>
@@ -22,6 +29,7 @@
 </template>
 <script>
     //import Details from 'Details.vue';
+    // import Vue from 'vue';
 
     export default {
         name: 'Briefing.vue',
@@ -52,11 +60,12 @@
                     }
                 })
         },
-        methods: {
-            Bridataid(){
-
-            }
-        }
+        // methods: {
+        //     Bridataid(dataid){
+        //          console.log(dataid)
+        //
+        //     },
+        //}
     }
 </script>
 <style scoped>

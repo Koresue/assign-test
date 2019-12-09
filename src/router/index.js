@@ -39,7 +39,8 @@ export default new Router({
         },
         {
             path:'/Details',
-            component: Details
+            name:'Details',
+            component: Details,
         },
         {
             path:'/Join',
