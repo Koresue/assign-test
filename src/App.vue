@@ -2,18 +2,21 @@
   <div id="app">
     <meta charset="UTF-8">
     <div id="header">
-<!--      <router-link></router-link>-->
     </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Briefing from './components/Briefing'
+import Details from './components/Details'
+
 
 export default {
   name: 'app'
 }
 </script>
+
 
 <style>
   #app {

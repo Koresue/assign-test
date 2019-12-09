@@ -4,7 +4,13 @@ import router from "./router"
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
+Vue.store= Vue.prototype.store = []
+
+var app = new Vue({
+    router,
+    render: h => h(App),
+    el: '#app',
+
+
+})
+

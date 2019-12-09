@@ -5,8 +5,9 @@ import student_user from "@/components/student_user"
 import briefing_list from "@/components/briefing_list";
 import calendar from "@/components/calendar";
 import briefing_add from "@/components/briefing_add";
-import Brifing from "@/components/Brifing";
+import Briefing from "@/components/Briefing";
 import Details from "@/components/Details";
+import Join from "@/components/Join";
 
 Vue.use(Router)
 
@@ -33,12 +34,16 @@ export default new Router({
             component: briefing_add
         },
         {
-            path:'/Brifing',
-            component: Brifing
+            path:'/Briefing',
+            component: Briefing
         },
         {
             path:'/Details',
             component: Details
-        }
-    ]
+        },
+        {
+            path:'/Join',
+            component: Join
+        },
+        ]
 })
