@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Briefing from './components/Briefing'
-import Details from './components/Details'
+// import Briefing from './components/Briefing'
+// import Details from './components/Details'
 
 
 export default {

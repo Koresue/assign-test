@@ -5,19 +5,6 @@
             <tbody>
             <tr v-for="item in datas" v-bind:key="item.id" >
                 <td>{{ item.company_name }}
-                <!--<button>{{item.dataid}}</button>-->
-                    <!--<form action="Details.vue" >-->
-                        <!--<router-link to="Details" v-on:click="Bridetails">詳細{{item.dataid}}</router-link>-->
-                        <!--&lt;!&ndash;"{parms:{ name:'Details',value:'{{item.dataid}}'}}"&ndash;&gt;-->
-                    <!--</form>-->
-                <!--<form action="Details.vue" method="post">-->
-                    <!--<input type="hidden" v-model="item.dataid">-->
-                    <!--<input type="submit" value="詳細">-->
-                <!--</form>-->
-                <!--<input type="hidden" v-model="item.dataid">-->
-                <!--<router-link to="Details">詳細</router-link>-->
-                    <!--v-on="Bridataid(item.id)"-->
-                    <!--<router-link to="Details" v-on:click="Bridataid(item.dataid)">詳細</router-link>-->
                     <router-link v-bind:to="{path:'Details',query:{q:item.id}}">詳細</router-link>
                 </td>
             </tr>
@@ -28,9 +15,6 @@
     </div>
 </template>
 <script>
-    //import Details from 'Details.vue';
-    // import Vue from 'vue';
-
     export default {
         name: 'Briefing.vue',
         data () {
@@ -38,9 +22,6 @@
                 datas: []
             }
         },
-        // components:{
-        //     Details
-        // },
         created(){
             let brdata = this;
             fetch('http://ec2-18-177-93-10.ap-northeast-1.compute.amazonaws.com/assignDB/all_post.php')
@@ -59,13 +40,7 @@
                         })
                     }
                 })
-        },
-        // methods: {
-        //     Bridataid(dataid){
-        //          console.log(dataid)
-        //
-        //     },
-        //}
+        }
     }
 </script>
 <style scoped>

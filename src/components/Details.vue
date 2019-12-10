@@ -29,6 +29,7 @@
             <span id="Disability"></span>
             <p>[会社情報など]</p>
             <span id="Information"></span>
+            <p></p>
         </div>
     </div>
 </template>
